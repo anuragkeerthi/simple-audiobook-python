@@ -8,7 +8,8 @@ print(pages)
 
 speaker = pyttsx3.init()
 # speaker.say('Hi, I am talking. Is it audible')
-page = pdfReader.getPage(7) # Starting Page number
-text = page.extractText()
-speaker.say(text)
-speaker.runAndWait()
+for page_number in range(pages):
+    page = pdfReader.getPage(page_number) 
+    text = page.extractText()
+    speaker.say(text)
+    speaker.runAndWait()
